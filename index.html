@@ -1,0 +1,33 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<title>Test</title>
+		<script type="text/javascript" charset="utf-8" src="js/libs/jquery.min.js"></script>
+		<script type="text/javascript" charset="utf-8" src="js/tree.js"></script>
+		<script type="text/javascript" charset="utf-8" src="js/libs/json2.js"></script>
+		<script type="text/javascript" charset="utf-8" src="js/model/treeModel.js"></script>
+		<link rel="stylesheet" href="css/style.css" />
+	</head>
+	<body class="sapUiBody" role="application">		
+		<div id="content">
+			<div id="tree"></div>
+		</div>
+		<script type="text/javascript">
+			treeModel.init();
+			$("#tree").tree({
+				data: treeModel.getTreeData(),
+				onAddNode: function(data){
+					treeModel.setTreeData(data);
+				},
+				onRemoveNode: function(data){
+					treeModel.setTreeData(data);
+				},
+				onUpdateNode: function(data){
+					treeModel.setTreeData(data);
+				}
+			});
+		</script>
+	</body>
+</html>
